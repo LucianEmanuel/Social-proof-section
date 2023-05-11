@@ -1,0 +1,167 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Font */
+
+  --ff: "League Spartan", sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fs: 0.9375rem;
+  --fs-h1: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--ff);
+  font-weight: var(--fw-400);
+  font-size: var(--fs);
+  color: var(--Dark-Grayish-Magenta);
+  background: url(images/bg-pattern-top-mobile.svg) no-repeat,
+    url(images/bg-pattern-bottom-mobile.svg) no-repeat bottom/contain;
+}
+.text-accent {
+  color: var(--Very-Dark-Magenta);
+}
+.bg-accent {
+  background-color: var(--Very-Dark-Magenta);
+  color: var(--Light-Grayish-Magenta);
+}
+.bg-light {
+  background-color: var(--Light-Grayish-Magenta);
+}
+.special-txt {
+  color: var(--Soft-Pink);
+}
+
+.fw_700 {
+  font-weight: var(--fw-700);
+}
+.fw_500 {
+  font-weight: var(--fw-500);
+}
+img {
+  max-width: 100%;
+}
+h1 {
+  line-height: 1;
+  max-width: 70%;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.main-content {
+  width: 90%;
+  max-width: 650px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.desc {
+  text-align: center;
+}
+.review {
+  text-align: center;
+  padding-block: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.testimonial-card {
+  border-radius: 5px;
+  padding: 2rem;
+}
+.testimonial-antet {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.testimonial-antet img {
+  width: 50px;
+  border-radius: 100%;
+}
+
+@media (min-width: 1200px) {
+  body {
+    background: url(images/bg-pattern-top-desktop.svg) no-repeat,
+      url(images/bg-pattern-bottom-desktop.svg) no-repeat bottom/contain;
+    display: grid;
+    place-items: center;
+  }
+  .main-content {
+    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas:
+      "a b"
+      "c c";
+  }
+  .desc {
+    grid-area: a;
+    text-align: left;
+  }
+  h1 {
+    margin-left: 0;
+    font-size: 3rem;
+    max-width: 60%;
+  }
+  .desc p {
+    max-width: 70%;
+    font-size: 1.2rem;
+  }
+  .reviews {
+    grid-area: b;
+    justify-content: end;
+    width: 80%;
+    justify-self: end;
+  }
+  .review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+    padding-block: 1rem;
+  }
+  .review_2 {
+    transform: translateX(-50px);
+  }
+  .review_1 {
+    transform: translateX(-100px);
+  }
+
+  .testimonials {
+    grid-area: c;
+    display: flex;
+    margin-top: 2rem;
+  }
+  .card_2 {
+    transform: translateY(20px);
+  }
+  .card_3 {
+    transform: translateY(40px);
+  }
+}
